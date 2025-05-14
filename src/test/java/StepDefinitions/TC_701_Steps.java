@@ -58,5 +58,6 @@ public class TC_701_Steps {
     @Then("User Logs Out by Click on the Sign Out")
     public void userLogsOutByClickOnTheSignOut() {
         dc.myClick(dc.SignOutButton);
+
     }
 }

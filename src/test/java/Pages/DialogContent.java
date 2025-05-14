@@ -62,6 +62,7 @@ public class DialogContent extends ParentPage{
             case "Password": return this.Password;
             case "ConfirmPassword": return this.ConfirmPassword;
 
+
         }
         return null;
     }
