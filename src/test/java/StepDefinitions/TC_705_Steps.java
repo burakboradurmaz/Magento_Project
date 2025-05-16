@@ -13,11 +13,6 @@ public class TC_705_Steps {
 
     DialogContent dc = new DialogContent(GWD.getDriver());
 
-    @Given("Navigate to Magento Website")
-    public void navigateToMagentoWebsite() {
-        GWD.getDriver().get(" https://magento.softwaretestingboard.com/ ");
-        Assert.assertTrue(GWD.getDriver().getCurrentUrl().contains("softwaretestingboard"));
-    }
 
     @And("The Button Should Be Clickable")
     public void theButtonShouldBeClickable() {
