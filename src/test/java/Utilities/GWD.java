@@ -1,48 +1,68 @@
 package Utilities;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.time.Duration;
 import java.util.Locale;
 
+import java.time.Duration;
+
 public class GWD {
-    private static WebDriver driver;
+    private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();// thread e özel driver
+    public static ThreadLocal<String> threadBrowserName = new ThreadLocal<>();
+    //driver -> threadDriver.get() -> bulunduğum thread deki driver ı al
+    //threadDriver.set(driver) -> bulunduğum threade driver set et
 
-    public static WebDriver getDriver()
-    {
-
+    public static WebDriver getDriver() {
         Locale.setDefault(new Locale("EN"));
-        System.setProperty("user.language","EN");
-        if (driver == null) {
-            driver = new ChromeDriver();
-            driver.manage().window().maximize();
-            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+        System.setProperty("user.language", "EN");
+
+        if (threadBrowserName.get() == null) // XML den çalışmayacak diğer testlerde tarayıcı boş geldiğinde
+            threadBrowserName.set("chrome");  // tarayıcı adı CHROME olarak default olsun
+
+        System.out.println(threadBrowserName.get());
+
+        if (threadDriver.get() == null) { //1 kez oluştur
+
+            switch (threadBrowserName.get()) {
+                case "edge":
+                    threadDriver.set(new EdgeDriver());
+                    break;
+                case "firefox":
+                    threadDriver.set(new FirefoxDriver());
+                    break;
+                default:
+                    threadDriver.set(new ChromeDriver());// bu thread e bir chrome oluştur ve set et
+            }
         }
 
-        return driver;
+        threadDriver.get().manage().window().maximize();  // bu hattaki driverı max et
+        threadDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+
+
+        return threadDriver.get();
     }
 
-    public static void quitDriver()
-    {
+
+    public static void quitDriver() {
+        //test sonucu ekranı bir miktar beklesin diye
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        if (driver != null)
+
+        if (threadDriver.get() != null) // var ise
         {
-            driver.quit();
-            driver=null;
+            threadDriver.get().quit();           // tarayıcı kapat, hafızada(thread) değişken duruyor
+            WebDriver driver=threadDriver.get(); // thread de ki değişkeni al
+            driver=null;                         // değişkene NULL değerini ata
+            threadDriver.set(driver);            // thread e bu değişkeni set et
         }
     }
 
-    public static void KalanOncekileriKapat() {
-        try {
-            Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
-        } catch (Exception e) {
 
-        }
-    }
 }
