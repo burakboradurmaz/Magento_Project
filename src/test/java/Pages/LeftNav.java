@@ -21,6 +21,22 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath="(//*[@class='nav item'])[5]/a")
     public WebElement addressBook;
 
+    // 708 (wish list)
+    @FindBy(xpath = "//*[@class='authorization-link']")
+    public WebElement SignInButton;
+
+    @FindBy(xpath = "//*[@id='search']")
+    public WebElement searchPlace;
+
+    @FindBy(xpath = "//*[@class='action search']")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "(//*[text()='My Account'])[3]")
+    public WebElement myAccountt;
+
+    @FindBy(xpath = "(//*[@class='nav item current'])")
+    public WebElement myWishList;
+
 
     public WebElement getWebElement(String strElement)
     {
