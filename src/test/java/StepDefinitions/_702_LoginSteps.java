@@ -22,12 +22,14 @@ public class _702_LoginSteps {
         GWD_old.getDriver().get("https://magento.softwaretestingboard.com");
     }
 
+
     @And("Click on the signIn button")
     public void clickOnTheSignInButton() {
         dc.wait.until(ExpectedConditions.urlContains(""));
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.cookie)).click();
         ln.myClick(ln.signInButton);
     }
+
 
     @When("Enter valid username as {string} and password as {string}")
     public void enterValidUsernameAsAndPasswordAs(String username, String password) {
