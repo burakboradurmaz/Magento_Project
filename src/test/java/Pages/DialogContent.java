@@ -191,6 +191,38 @@ public class DialogContent extends ParentPage{
     public WebElement deleteOkButton;
 
 
+    //708 Wish List
+
+    @FindBy(xpath = "//*[@name='login[username]']")
+    public WebElement LogInEmail;
+
+    @FindBy(xpath = "//*[@name='login[password]']")
+    public WebElement LogInPassword;
+
+    @FindBy(xpath = "//*[@id='send2']")
+    public WebElement SignInButton2;
+
+    @FindBy(xpath = "//*[contains(text(),'Welcome, Team5 Techno!')]")
+    public WebElement WelcomeMessage;
+
+    @FindBy(xpath = "//*[@class='action towishlist']")
+    public WebElement addToWishList;
+
+    @FindBy(xpath = "//*[@class='product-item-info']")
+    public WebElement itemInList;
+
+    @FindBy(xpath ="//*[@class='message-success success message']")
+    public WebElement MessageForWishList;
+
+    @FindBy(xpath = "(//*[@class='btn-remove action delete'])")
+    public WebElement RemoveButton;
+
+    @FindBy(xpath = "//*[contains(text(),'Lando Gym Jacket has been removed from your Wish List.')]")
+    public WebElement MessageToRemove;
+
+
+
+
     public WebElement getWebElement(String strElement)
     {
         switch (strElement)
