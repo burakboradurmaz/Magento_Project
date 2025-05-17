@@ -191,6 +191,31 @@ public class DialogContent extends ParentPage{
     public WebElement deleteOkButton;
 
 
+    // tc707
+
+    @FindBy(xpath = "//*[@id='search']")
+    public WebElement search_SendKeysOnTheHomePage;
+
+    @FindBy(xpath = "//*[@class='action search']")
+    public WebElement searchButtonOnTheHomePage;
+
+    @FindBy(xpath = "//*[@class='product-image-photo']")
+    public WebElement imgLandoGymJacket;
+
+    @FindBy(xpath = "//*[@class='page-title']/span")
+    public WebElement prdctNameInsideImg;
+
+    @FindBy(xpath = "//*[@itemprop='sku']")
+    public WebElement skuMJ08;
+
+    @FindBy(xpath = "//*[@class='message notice']/div")
+    public WebElement searchNoResultsText;
+
+    //
+
+
+
+
     public WebElement getWebElement(String strElement)
     {
         switch (strElement)
