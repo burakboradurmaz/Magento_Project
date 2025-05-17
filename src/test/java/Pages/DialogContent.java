@@ -1,14 +1,12 @@
 package Pages;
 
 import Utilities.GWD;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-
 import java.util.List;
 
 public class DialogContent extends ParentPage{
@@ -222,7 +220,6 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "(//*[@id='send2'])[1]")
     public WebElement loginButtonSignInButton;
 
-
     @FindBy(xpath = "//*[@id='email-error']")
     public WebElement emailError;
 
@@ -233,8 +230,9 @@ public class DialogContent extends ParentPage{
     public WebElement passwordError;
 
     /// TC 704
-      @FindBy(xpath = "//*[@id='accept-btn']//span")
-         public WebElement cookie;
+    @FindBy(xpath = "//*[@id='accept-btn']//span")
+    public WebElement cookie;
+
     @FindBy(xpath = "(//*[@class='greet welcome'])")
     public WebElement welcomeHeadText;
 
@@ -251,8 +249,6 @@ public class DialogContent extends ParentPage{
             case "cookie": return this.cookie;
             case "welcomeHeadText": return this.welcomeHeadText;
             case "loginButtonSignInButton": return this.loginButtonSignInButton;
-
-
         }
         return null;
     }

@@ -64,12 +64,6 @@ public class _702_LoginSteps {
     }
 
 
-
-
-
-
-
-
     @Given("User enters the correct password")
     public void userEntersTheCorrectPassword() {
         dc.mySendKeys(dc.Password,"1q2w3e4raA.");

@@ -71,7 +71,6 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath = "(//*[text()='Tanks'])[1]")
     public WebElement subMenuMenTanksButton;
 
-
     @FindBy(xpath = "(//*[text()='Pants'])[2]")
     public WebElement subMenuMenPantsButton;
 
@@ -93,9 +92,6 @@ public class LeftNav extends ParentPage{
 
     @FindBy(xpath = "//*[text()='Watches']")
     public WebElement subMenuGearWatchesButton;
-
-
-
 
     //_____________________Training__________________________//
     @FindBy(xpath = "//*[text()='Training']")

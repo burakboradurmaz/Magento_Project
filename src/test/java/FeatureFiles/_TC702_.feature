@@ -10,7 +10,6 @@ Feature: Login Functionality
     And Click on the login button
     Then The user should be logged successfully
 
-
   Scenario: Login with null email
     Given User enters the correct password
     When Click on the login button
