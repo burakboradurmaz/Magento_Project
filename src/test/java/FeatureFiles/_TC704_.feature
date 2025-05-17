@@ -11,7 +11,7 @@ Feature: Top Menu Functionality
       | subMenuWomenTopButton     |
       | subMenuWomenJacketsButton |
     And Click to sub menu element
-      | subMenuWomenJacketsButton1 |
+      | subMenuWomenJacketsButton |
     And The user should be able see the Text
       | subMenuText | jackets |
 

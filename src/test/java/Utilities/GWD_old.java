@@ -20,7 +20,6 @@ public class GWD_old {
             driver.manage().window().maximize();
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         }
-
         return driver;
     }
 

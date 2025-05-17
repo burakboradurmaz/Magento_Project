@@ -2,6 +2,7 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import Pages.LeftNav;
+import Utilities.GWD;
 import Utilities.GWDParameter;
 import Utilities.GWD_old;
 import io.cucumber.datatable.DataTable;
@@ -22,8 +23,7 @@ public class _TC704_Steps {
 
     @Given("Navigate to Homepage")
     public void navigateToHomepage() {
-        GWDParameter.getDriver().get("https://magento.softwaretestingboard.com");
-
+        GWD_old.getDriver().get(" https://magento.softwaretestingboard.com/");
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.cookie)).click();
         ln.myClick(ln.signInButton);
         dc.mySendKeys(dc.email, "batch7team5@gmail.com");
