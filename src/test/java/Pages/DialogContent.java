@@ -191,6 +191,47 @@ public class DialogContent extends ParentPage{
     public WebElement deleteOkButton;
 
 
+    /// TC 706
+    @FindBy (xpath = "//*[@class='product-item']")
+    public List<WebElement> homepageItems;
+
+    @FindBy(xpath = "//*[@id='product-addtocart-button']")
+    public WebElement addToCartButton;
+
+    @FindBy(xpath = "//*[@class='swatch-option text']")
+    public List<WebElement> sizes;
+
+    @FindBy(xpath = "//*[@class='swatch-option color']")
+    public List<WebElement> colors;
+
+    @FindBy(xpath = "(//*[@class='counter qty'])[1]")
+    public WebElement myCartButton;
+
+    @FindBy(xpath = "//*[@id='top-cart-btn-checkout']")
+    public WebElement checkOutButton;
+
+    @FindBy(xpath = "//*[@name='shippingAddress.street.0']")
+    public WebElement shippingAddressInput;
+
+    @FindBy(xpath = "//*[@name='shippingAddress.city']")
+    public WebElement shippingAddressCityInput;
+
+    @FindBy(xpath = "//*[@name='shippingAddress.region_id']//div")
+    public WebElement stateSelect;
+
+    @FindBy(xpath = "(//*[@id='send2'])[1]")
+    public WebElement loginButtonSignInButton;
+
+
+    @FindBy(xpath = "//*[@id='email-error']")
+    public WebElement emailError;
+
+    @FindBy(xpath = "//*[contains(text(),'incorrect')]")
+    public WebElement incorrectError;
+
+    @FindBy(xpath = "//*[@id='pass-error']")
+    public WebElement passwordError;
+
     /// TC 704
       @FindBy(xpath = "//*[@id='accept-btn']//span")
          public WebElement cookie;
@@ -209,6 +250,7 @@ public class DialogContent extends ParentPage{
             case "ConfirmPassword": return this.ConfirmPassword;
             case "cookie": return this.cookie;
             case "welcomeHeadText": return this.welcomeHeadText;
+            case "loginButtonSignInButton": return this.loginButtonSignInButton;
 
 
         }
