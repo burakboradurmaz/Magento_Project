@@ -12,6 +12,7 @@ public class LeftNav extends ParentPage{
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
+    //704
     @FindBy(xpath="(//*[@data-action='customer-menu-toggle'])[1]")
     public WebElement menu;
 
@@ -20,6 +21,23 @@ public class LeftNav extends ParentPage{
 
     @FindBy(xpath="(//*[@class='nav item'])[5]/a")
     public WebElement addressBook;
+
+    //708
+
+    @FindBy(xpath = "//*[@class='authorization-link']")
+    public WebElement SignInButton;
+
+    @FindBy(xpath = "//*[@id='search']")
+    public WebElement searchPlace;
+
+    @FindBy(xpath = "//*[@class='action search']")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "(//*[text()='My Account'])[3]")
+    public WebElement myAccountt;
+
+    @FindBy(xpath = "(//*[@class='nav item current'])")
+    public WebElement myWishList;
 
 
     public WebElement getWebElement(String strElement)

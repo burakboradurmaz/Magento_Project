@@ -190,6 +190,65 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "(//*[@data-role='action'])[2]")
     public WebElement deleteOkButton;
 
+    //TC707
+
+    @FindBy(xpath = "//*[@id='search']")
+    public WebElement search_SendKeysOnTheHomePage;
+
+    @FindBy(xpath = "//*[@class='action search']")
+    public WebElement searchButtonOnTheHomePage;
+
+    @FindBy(xpath = "//*[@class='product-image-photo']")
+    public WebElement imgLandoGymJacket;
+
+    @FindBy(xpath = "//*[@class='page-title']/span")
+    public WebElement prdctNameInsideImg;
+
+    @FindBy(xpath = "//*[@itemprop='sku']")
+    public WebElement skuMJ08;
+
+    @FindBy(xpath = "//*[@class='message notice']/div")
+    public WebElement searchNoResultsText;
+
+    /// TC 704
+    @FindBy(xpath = "//*[@id='accept-btn']//span")
+    public WebElement cookie;
+    @FindBy(xpath = "(//*[@class='greet welcome'])")
+    public WebElement welcomeHeadText;
+
+    //708 Wish List
+
+    @FindBy(xpath = "//*[@name='login[username]']")
+    public WebElement LogInEmail;
+
+    @FindBy(xpath = "//*[@name='login[password]']")
+    public WebElement LogInPassword;
+
+    @FindBy(xpath = "//*[@id='send2']")
+    public WebElement SignInButton2;
+
+    @FindBy(xpath = "//*[contains(text(),'Welcome, Team5 Techno!')]")
+    public WebElement WelcomeMessage;
+
+    @FindBy(xpath = "//*[@class='action towishlist']")
+    public WebElement addToWishList;
+
+    @FindBy(xpath = "//*[@class='product-item-info']")
+    public WebElement itemInList;
+
+    @FindBy(xpath ="//*[@class='message-success success message']")
+    public WebElement MessageForWishList;
+
+    @FindBy(xpath = "(//*[@class='btn-remove action delete'])")
+    public WebElement RemoveButton;
+
+    @FindBy(xpath = "//*[contains(text(),'Lando Gym Jacket has been removed from your Wish List.')]")
+    public WebElement MessageToRemove;
+
+
+
+
+
 
     public WebElement getWebElement(String strElement)
     {
@@ -200,6 +259,11 @@ public class DialogContent extends ParentPage{
             case "Email": return this.Email;
             case "Password": return this.Password;
             case "ConfirmPassword": return this.ConfirmPassword;
+            case "Email": return this.Email;
+            case "Password": return this.Password;
+            case "ConfirmPassword": return this.ConfirmPassword;
+            case "cookie": return this.cookie;
+            case "welcomeHeadText": return this.welcomeHeadText;
 
 
         }
