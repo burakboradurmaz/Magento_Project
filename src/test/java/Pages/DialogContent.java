@@ -191,6 +191,13 @@ public class DialogContent extends ParentPage{
     public WebElement deleteOkButton;
 
 
+    /// TC 704
+      @FindBy(xpath = "//*[@id='accept-btn']//span")
+         public WebElement cookie;
+    @FindBy(xpath = "(//*[@class='greet welcome'])")
+    public WebElement welcomeHeadText;
+
+
     public WebElement getWebElement(String strElement)
     {
         switch (strElement)
@@ -200,6 +207,8 @@ public class DialogContent extends ParentPage{
             case "Email": return this.Email;
             case "Password": return this.Password;
             case "ConfirmPassword": return this.ConfirmPassword;
+            case "cookie": return this.cookie;
+            case "welcomeHeadText": return this.welcomeHeadText;
 
 
         }

@@ -33,13 +33,14 @@ public class TC_701_Steps {
 
     @And("User Fills The Registration From With Valid Data")
     public void userFillsTheRegistrationFromWithValidData(DataTable dataTable) {
-        List<List<String>>itemList=dataTable.asLists(String.class);
+        List<List<String>> itemList = dataTable.asLists(String.class);
 
-        for (int i=0;i<itemList.size();i++){
-            WebElement element=dc.getWebElement(itemList.get(i).get(0));
-            dc.mySendKeys(element,itemList.get(i).get(1));
+        for (int i = 0; i < itemList.size(); i++) {
+            WebElement element = dc.getWebElement(itemList.get(i).get(0));
+            dc.mySendKeys(element, itemList.get(i).get(1));
         }
     }
+
     @And("User Click on Create an Account Button")
     public void UserClickonCreateanAccountButton() {
         dc.myClick(dc.SubmitButton);
