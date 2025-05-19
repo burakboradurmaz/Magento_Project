@@ -1,11 +1,13 @@
+@Smoke, @Regression
 Feature: Product Selection
-  Scenario: Add and Remove Item
+  Background:
     Given Navigate to Magento Website
     And The Button Should Be Clickable
     And Click on The SignIn Button
     When Enter Email as "team5@gmail.com" and Password as "TeamFive5*"
     And Click SignIn Button
     And The Button Should Be Displayed
+  Scenario: Add and Remove Item
     Then User Should Select a Product
     And Add to Cart Button Should be Clickable
     Then Select Size, Color and Qty
