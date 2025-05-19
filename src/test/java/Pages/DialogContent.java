@@ -190,6 +190,10 @@ public class DialogContent extends ParentPage{
 
 
     /// TC 706
+
+    @FindBy(xpath = "//*[@data-ui-id='page-title-wrapper']")
+    public WebElement tyText;
+
     @FindBy (xpath = "//*[@class='product-item']")
     public List<WebElement> homepageItems;
 

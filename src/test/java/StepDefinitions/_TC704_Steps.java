@@ -40,7 +40,7 @@ public class _TC704_Steps {
     @And("Hover the element")
     public void hoverTheElement(DataTable buttons) {
         List<String> button = buttons.asList();
-        Actions actions = new Actions(GWDParameter.getDriver());
+        Actions actions = new Actions(GWD_old.getDriver());
         for (int i = 0; i < button.size(); i++) {
             ln.wait.until(ExpectedConditions.elementToBeClickable(ln.getWebElement(button.get(i))));
             Action action = actions.moveToElement(ln.getWebElement(button.get(i))).release().build();
