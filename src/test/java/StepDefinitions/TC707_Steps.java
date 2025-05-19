@@ -1,7 +1,6 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-import Pages.LeftNav;
 import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -10,7 +9,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
-public class US7_SearchSteps {
+public class TC707_Steps {
     DialogContent dc = new DialogContent(GWD.getDriver());
 
     @Given("The user navigates to the Magento website")

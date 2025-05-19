@@ -25,7 +25,7 @@ public class _TC704_Steps {
         GWDParameter.getDriver().get("https://magento.softwaretestingboard.com");
 
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.cookie)).click();
-        ln.myClick(ln.signInButton);
+        ln.myClick(ln.SignInButton);
         dc.mySendKeys(dc.email, "batch7team5@gmail.com");
         dc.mySendKeys(dc.password, "1q2w3e4raA.");
         dc.signButton.click();

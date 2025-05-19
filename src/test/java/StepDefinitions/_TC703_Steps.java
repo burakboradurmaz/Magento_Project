@@ -7,15 +7,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
 
-public class AC03_Add_Address_Steps {
+public class _TC703_Steps {
 
     LeftNav ln = new LeftNav(GWD.getDriver());
     DialogContent dc = new DialogContent(GWD.getDriver());

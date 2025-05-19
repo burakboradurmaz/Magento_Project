@@ -19,11 +19,11 @@ public class TC_708_Steps {
     LeftNav lf = new LeftNav(GWD.getDriver());
 
 
-    @Given("Navigate to Magento Website")
-    public void navigateToMagentoWebsite() {
-        GWD.getDriver().get("https://magento.softwaretestingboard.com/");
+   // @Given("Navigate to Magento Website")
+   // public void navigateToMagentoWebsite() {
+     //   GWD.getDriver().get("https://magento.softwaretestingboard.com/");
 
-    }
+    //}
 
     @And("Click Sign In button")
     public void clickSignInButton() {

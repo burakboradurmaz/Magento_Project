@@ -231,6 +231,11 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//*[@id='pass-error']")
     public WebElement passwordError;
 
+    //TC702
+
+    @FindBy(xpath = "//*[@data-ui-id='page-title-wrapper']")
+    public WebElement tyText;
+
     /// TC 704
     @FindBy(xpath = "//*[@id='accept-btn']//span")
     public WebElement cookie;
