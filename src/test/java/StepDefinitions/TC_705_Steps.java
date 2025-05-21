@@ -30,8 +30,8 @@ public class TC_705_Steps {
     @And("Click on The SignIn Button")
     public void clickOnTheSignInButton() {
         WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
-        //wait.until(ExpectedConditions.elementToBeClickable(dc.SignInButton));
-        getWait().until(ExpectedConditions.visibilityOf(dc.SignInButton));
+        wait.until(ExpectedConditions.elementToBeClickable(dc.SignInButton));
+        //getWait().until(ExpectedConditions.visibilityOf(dc.SignInButton));
         dc.myClick(dc.SignInButton);
     }
 
