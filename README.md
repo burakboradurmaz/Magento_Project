@@ -1,57 +1,91 @@
-# Magento Website Project
+# Cucumber Test Automation Project
 
-Project Purpose
+Bu proje, [demo.mersys.io](https://demo.mersys.io) adresindeki uygulama üzerinde Cucumber, Selenium WebDriver ve TestNG kullanılarak geliştirilmiş bir test otomasyon projesidir.
 
-The mission is to automatically test the following core functions for the Magento Project:
+## 🚀 Kullanılan Teknolojiler
 
-1. Creating a new user registration
-2. Login and authorization
-3. Adding and editing addresses
-4. Product search and filtering
-5. Adding & removing products to & from the cart
-6. Creating and completing orders
-7. Managing favorite lists
-8. Menu verification
+- Java 17
+- Selenium WebDriver
+- Cucumber (BDD)
+- TestNG
+- Maven
+- ExtentReports
+- WebDriverManager
+- IntelliJ IDEA
 
-Project Structure
+## 📁 Proje Yapısı
 
-MagentoProject_Cucumber/
-├── src/
-│   └── test/
-│       │
-│       ├── java/
-│       │   ├── featureFiles/                # .feature files written in Gherkin
-│       │   ├── hooks/                       # Cucumber Hooks (Before/After)
-│       │   ├── pages/                       # Page Object Model classes
-│       │   ├── runners/                     # TestNG runner classes
-│       │   │   └── XML/                     # TestNG XML configuration files
-│       │   ├── stepDefinitions/             # Cucumber step definitions
-│       │   └── utilities/                   # Driver, ConfigReader, ExtentReportManager, etc.
-│       │
-│       └── resources/                       # ExtentReports configuration
+```plaintext
+├── FeatureFiles/              # Gherkin ile yazılmış feature dosyaları
+│   ├── TC701_UserRegister.feature
+│   ├── TC702.feature
+│   └── ...
 │
-├── testGifs/                                # GIFs used in reports
-├── testReports/                             # Spark & PDF report output (auto-generated)
-├── configuration.properties                 # General test configuration
-├── pom.xml                                  # Maven build configuration
-└── README.md                                # Project README
+├── Pages/                     # Page Object Model (POM) yapısı
+│   ├── DialogContent.java
+│   ├── LeftNav.java
+│   └── ParentPage.java
+│
+├── Runners/                   # Test runner sınıfları
+│   ├── _01_TestRunnerAll.java
+│   ├── _04_TestRunnerSmoke.java
+│   └── _05_TestRunnerRegression.java
+│
+├── StepDefinitions/          # Step definition (adım tanımlamaları)
+│   ├── TC701_Steps.java
+│   ├── TC702_Steps.java
+│   └── ...
+│
+├── Utilities/                # Yardımcı sınıflar
+│   ├── GWD.java              # Driver yönetimi (Singleton WebDriver)
+│   ├── GWDParameter.java     # Parametreli driver yönetimi (parallel test için)
+│   └── ...
+│
+├── XML/                      # TestNG XML dosyaları
+│   └── ParallelTest.xml
+│
+└── pom.xml                   # Maven yapılandırma dosyası
+```
 
-Team Members
+## 🧪 Test Türleri
 
-|           MEMBER        |ROLE|
-|sewoesterserkan@gmail.com | QA |
-|ennur789@gmail.com        | QA |
-|burakboradurmaz@gmail.com | QA |
-|murattoksuz@gmail.com     | QA |
-|gokdemir.aysenur@gmail.com| QA |
-|hakan_merts@hotmail.com   | QA |
-|canibr97@gmail.com        | QA |
-|yilmaztuba.ty@gmail.com   | QA |
+- **Smoke Test**: `_04_TestRunnerSmoke.java`
+- **Regression Test**: `_05_TestRunnerRegression.java`
+- **Tüm Testler**: `_01_TestRunnerAll.java`
 
+## ⚙️ Testlerin Çalıştırılması
 
-Installation
-1. Copy the repository
-   git clone https://github.com/burakboradurmaz/Magento_Project.git
-2. Open the project on IntelliJ IDEA
-3. Run the project
-   mvn clean install
+### 1. Maven ile bağımlılıkların yüklenmesi
+```bash
+mvn clean install
+```
+
+### 2. Tüm testleri çalıştırmak için:
+```bash
+Right-click on _01_TestRunnerAll.java → Run
+```
+
+### 3. Paralel test çalıştırmak için:
+```bash
+Right-click on ParallelTest.xml → Run
+```
+
+## 📊 Raporlama
+
+- ExtentReports ile HTML formatında rapor oluşturulmaktadır.
+- Raporlar test çalıştıktan sonra `target/extent-reports/` klasöründe oluşur.
+
+## ✍️ Katkıda Bulunma
+
+Her türlü katkıya açığız! Yeni test senaryoları, iyileştirme önerileri ve hata bildirimleri memnuniyetle karşılanır.
+
+## 👥 Katkıda Bulunanlar
+
+- [yilmaztuba.ty@gmail.com] - QA
+- [hakan_merts@hotmail.com] - QA
+- [gokdemir.aysenur@gmail.com] - QA
+- [sewoesterserkan@gmail.com] - QA
+- [burakboradurmaz@gmail.com] - QA
+- [murattoksuz@gmail.com] - QA
+- [canibr97@gmail.com] - QA
+- [ennur789@gmail.com] - QA
