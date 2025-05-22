@@ -55,20 +55,17 @@ Bu proje, [demo.mersys.io](https://demo.mersys.io) adresindeki uygulama üzerind
 
 ## ⚙️ Testlerin Çalıştırılması
 
-### 1. Maven ile bağımlılıkların yüklenmesi
-```bash
+### 1. Copy the project
+git clone https://github.com/burakboradurmaz/Magento_Project.git
+
+### 2. Navigate to project directory
+cd CucumberProjectMagento
+
+### 3. Load Maven dependencies
 mvn clean install
-```
 
-### 2. Tüm testleri çalıştırmak için:
-```bash
-Right-click on _01_TestRunnerAll.java → Run
-```
-
-### 3. Paralel test çalıştırmak için:
-```bash
-Right-click on ParallelTest.xml → Run
-```
+### 4. Run tests
+mvn test
 
 ## 📊 Raporlama
 
